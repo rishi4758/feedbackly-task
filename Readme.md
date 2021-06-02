@@ -94,3 +94,5 @@ You can double-check the answer using http://www.npscalculator.com/en
 https://docs.mongodb.com/manual/reference/operator/aggregation/group/
 
 https://docs.mongodb.com/manual/reference/operator/aggregation/switch
+
+**Any code in this repo might change without any prior notice and it's forbidden to share, serve or store it publicly personally
