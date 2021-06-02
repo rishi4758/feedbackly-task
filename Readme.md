@@ -81,7 +81,7 @@ The NPS Score is `20 - 60 = -40`.
 You can double-check the answer using http://www.npscalculator.com/en
 
 
-#### 1) Linting
+#### 2) Linting
 
  Please set up and use linting while coding "Backend". You can use any linting tool and strategy.
  
