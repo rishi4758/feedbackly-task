@@ -1,98 +1,99 @@
-# Readme
+---
+Owner: 'Feedbackly'
+Description: 'Feedbackly app with Express, Mongodb, Typescript, Vuejs, Jest and Docker'
+Status: 'Submit'
+Type: 'Rishav test task'
+---
 
-## Installation
+<div id="top"></div>
 
-- Install docker
-- Install nodejs
-- Install yarn
-- Install vue cli (`npm i -g @vue/cli`)
+<details>
+  <summary>Table of Contents</summary>
+  <ol>
+    <li><a href="#technology-stack-used-in-feedbackly-app">Technology stack used in feedbackly app.</a></li>
+    <li><a href="#how-to-spin-up-feedbackly-app">How to spin up the project.</a></li>
+  </ol>
+</details>
 
-- Install backend deps by running `yarn` in the backend folder
-- Install frontend deps by running `yarn` in the frontend folder
 
-### Database
+## Technology stack used in feedbackly app
+
+
+<h4> 1. Expressjs    <a href="https://expressjs.com/" target="_blank"> <img src="https://www.bairesdev.com/wp-content/uploads/2021/07/Expressjs.svg" alt="expressjs" width="40" height="40"/></a></h4>
+
+
+<h4> 2. Mongodb    <a href="http://mongodb.com" target="_blank"> <img src="https://mpng.subpng.com/20190111/thz/kisspng-mongodb-logo-database-nosql-postgresql-how-to-create-an-outstanding-tech-stack-clickup-bl-5c391bdf9cff48.4731136215472465596431.jpg" alt="graphql" width="40" height="40"/></a></h4>
+
+<h4> 3. Typescript        <a href="https://typescriptlang.org/" target="_blank"> <img src="https://cdn.worldvectorlogo.com/logos/typescript-2.svg" alt="typescript" width="40" height="40"/></a></h4>
+
+
+
+<h4> 4. Vuejs        <a href="https://vuejs.org" target="_blank"> <img src="https://www.vectorlogo.zone/logos/vuejs/vuejs-ar21.png" alt="jest" width="40" height="40"/></a></h4>
+
+<h4> 5. Jest        <a href="https://jestjs.io/" target="_blank"> <img src="https://seeklogo.com/images/J/jest-logo-F9901EBBF7-seeklogo.com.png" alt="jest" width="40" height="40"/></a></h4>
+
+<h4> 6. Docker        <a href="https://www.docker.com//" target="_blank"> <img src="https://logos-world.net/wp-content/uploads/2021/02/Docker-Symbol.png" alt="docker" width="40" height="40"/></a></h4>
+
+
+## How to spin up feedbackly app
+## 🚀 Quick start
+
+## Database
+
 On Mac / Linux machines you can run the database by navigating to the mongo folder and running
 
-````
+```
 /bin/sh start.sh
-````
+```
 
-### Frontend
+## Backend
 
-You can run the frontend by navigating to frontend folder and running `yarn serve`
-
-### Backend
-
-You can run the backend by navigating to backend folder and running `yarn start`
+Go to backend folder and run following commands.
 
 
-## Assignment
+**Install dependencies**
+```
+yarn
+```
 
-Create an app that fetches NPS groupings and Emoticon averages from the backend endpoints. As an optional bonus, also fetch the NPS Score from another endpoint.
+**Start developing**
 
-### Frontend instructions
+```
+yarn start
+```
 
-Create a new Vue component for each of the items you're going to fetch from the backend. Each of the view should contain a button to fetch the data from the respective backend endpoint. Implement a loading state to the button to be displayed only when data is being fetched. After a successful fetch, the button should be disabled. The main view should display the data similar to the provided mockups. (See `Mockups.jpg`)
+## Frontend
 
-When data fetch completes, the component should emit the data to the parent component and the data should be updated accordingly.
+Go to frontend folder and run following commands.
 
 
-## Backend instructions
+**Install dependencies**
+```
+yarn
+```
 
-The backend is using a mongoose as an ORM to the underlying data. You should take a look at the data schema in `backend/src/models/data.ts` to understand it. Also, you can see the whole database dump in `mongo/MOCK_DATA.json`. The data is already pre-loaded to the mongo docker image when you build it.
+**Start developing**
 
-We've added a delay to the endpoints to more easily demonstrate the loading text.
+```
+yarn serve
+```
 
-### Emoticon average
-
-The emoticon average should be calculated using the mongo aggregation framework, using only data that has the type `type: 'Emoticon'`.
-
-### NPS Grouping
-
-The NPS grouping should be calculated using the mongo aggregation framework. If you're unfamiliar with NPS, you can check it out at https://en.wikipedia.org/wiki/Net_Promoter
-
-Basically, you need to group each NPS data to Promoters (value: 9 & 10), Passives: (value: 7 & 8) and Detractors: (values: 0-6). This can be done using a single aggregation pipeline. Hint: Use the `$group` operator.
-
-### BONUSES: 
-
-#### 1) NPS Score
-
-NPS Score can be calculated with this formula: Percentage of promoters - Percentage of Detractors.
-
-The idea is to use the NPS grouping you made in the previous assignment and calculate the score in the backend before passing the response back to the frontend.
-
-For example: 
-We have data with the scores of `4,5,2,8,10`
-
-The total number of answers is `5`.
-
-The number of promoters is `1` (value: 10)
-
-The number of detractors is `3` (values 4,5,2)
+## ⚗️ Testing
 
 
 
-The percentage of promoters is `1 / 5 = 20%`.
+**Backend test**
 
-The percentage of detractors is `3 / 5 = 60%`.
+Run following command in your terminal to run backend tests:
 
-The NPS Score is `20 - 60 = -40`.
+```
+yarn test
+```
 
-You can double-check the answer using http://www.npscalculator.com/en
+**Frontend test**
 
+Run following command in your terminal to run unit tests:
 
-#### 2) Linting
-
- Please set up and use linting while coding "Backend". You can use any linting tool and strategy.
- 
-#### 3) Testing
-
- Please set up and write tests for at least frontend or backend by using Jest
-
-## Useful links
-
-https://docs.mongodb.com/manual/reference/operator/aggregation/group/
-
-https://docs.mongodb.com/manual/reference/operator/aggregation/switch
-
-**Any code in this repo might change without any prior notice and it's forbidden to share, serve or store it publicly personally
+```
+yarn test:unit
+```
